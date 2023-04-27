@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1678706520 source:c:\documents\random_files\manuela feidi\laborator 3 tema 5\main.c
+	<stdio.h>
+	<stdlib.h>
+	<limits.h>
+
+1678731288 source:c:\documents\university\laboratoare\fundamentele programarii\laborator 3 cod sursa\laborator 3 ex 5\main.c
+	<stdio.h>
+	<stdlib.h>
+	<limits.h>
+

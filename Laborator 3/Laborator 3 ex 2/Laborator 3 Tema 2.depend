@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1678730676 source:c:\documents\university\laboratoare\fundamentele programarii\laborator 3 tema 2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+
+1678730676 source:c:\documents\university\laboratoare\fundamentele programarii\laborator 3 cod sursa\laborator 3 ex 2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+

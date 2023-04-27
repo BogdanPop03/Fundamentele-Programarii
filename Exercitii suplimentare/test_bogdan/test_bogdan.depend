@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1678889951 source:c:\documents\university\laboratoare\fundamentele programarii\exercitii suplimentare\test_bogdan\main.c
+	<math.h>
+	<stdbool.h>
+	<stdio.h>
+	<stdlib.h>
+

@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1678731358 source:c:\documents\university\laboratoare\fundamentele programarii\laborator 3 tema 6\main.c
+	<stdio.h>
+	<stdlib.h>
+

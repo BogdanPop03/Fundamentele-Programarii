@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1680101645 source:c:\documents\university\laboratoare\fundamentele programarii\laborator 5 cod sursa\laborator 5 ex 4\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+

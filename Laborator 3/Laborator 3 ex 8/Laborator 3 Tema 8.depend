@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1678729624 source:c:\documents\university\laboratoare\fundamentele programarii\laborator 3 tema 8\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+

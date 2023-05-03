@@ -62,6 +62,18 @@ void elementePare(int matrice[][MAX], int raspuns[], int nr_linii, int nr_coloan
 
     RASPUNS 2:
     2 4 6 8 10 12
+
+    TEST 3:
+    4
+    3
+
+     1  2  3
+     4  5  6
+     7  8  9
+    10 11 12
+
+    RASPUNS 3:
+    2 4 6 8 10 12
     */
 }
 // Cerinta Elemente pare stop
@@ -128,6 +140,18 @@ void elementeNumerePrime(int matrice[][MAX], int raspuns[], int nr_linii, int nr
 
     RASPUNS 2:
     2 3 5 7 11
+
+    TEST 3:
+    4
+    3
+
+     1  2  3
+     4  5  6
+     7  8  9
+    10 11 12
+
+    RASPUNS 3:
+    2 3 5 7 11
     */
 }
 // Cerinta Elemente numere prime stop
@@ -183,14 +207,7 @@ void zigZag(int matrice[][MAX], int nr_linii, int nr_coloane, int raspuns[], int
         }
     }
 
-    if (nr_linii == nr_coloane)
-    {
-        *dim3 = indice - 1;
-    }
-    else
-    {
-        *dim3 = indice;
-    }
+    *dim3 = indice;
 
     /*
     TEST 1:
@@ -215,6 +232,18 @@ void zigZag(int matrice[][MAX], int nr_linii, int nr_coloane, int raspuns[], int
 
     RASPUNS 2:
     1 5 2 3 6 9 10 7 4 8 11 12
+
+    TEST 3:
+    4
+    3
+
+     1  2  3
+     4  5  6
+     7  8  9
+    10 11 12
+
+    RASPUNS 3:
+    1 4 2 3 5 7 10 8 6 9 11 12
     */   
 }
 // Cerinta ZigZag stop
@@ -267,15 +296,7 @@ void spirala(int matrice[][MAX], int nr_linii, int nr_coloane, int raspuns[], in
         
     }
 
-    if (nr_linii == nr_coloane)
-    {
-        *dim4 = indice - 1;
-    }
-    else
-    {
-        *dim4 = indice + 1;
-    }
-    
+    *dim4 = indice - 1;
 
     /*
     TEST 1:
@@ -300,6 +321,18 @@ void spirala(int matrice[][MAX], int nr_linii, int nr_coloane, int raspuns[], in
 
     RASPUNS 2:
     1 2 3 4 8 12 11 10 9 5 6 7
+
+    TEST 3:
+    4
+    3
+
+     1  2  3
+     4  5  6
+     7  8  9
+    10 11 12
+
+    RASPUNS 3:
+    1 2 3 6 9 12 11 10 7 4 5 8
     */   
 }
 // Cerinta Spirala stop

@@ -161,7 +161,6 @@ void parcurgereDiagonalaInSus(int matrice[][MAX], int raspuns[], int suma, int n
             if (i + j == suma)
             {
                 raspuns[*indice] = matrice[i][j];
-                // printf("Raspuns[%d]: %d ", *indice, raspuns[*indice]);
                 *indice += 1;
             }
         }
@@ -177,14 +176,12 @@ void parcurgereDiagonalaInJos(int matrice[][MAX], int raspuns[], int suma, int n
             if (i + j == suma)
             {
                 raspuns[*indice] = matrice[i][j];
-                // printf("Raspuns[%d]: %d ", *indice, raspuns[*indice]);
                 *indice += 1;
             }
         }
     }
     
 }
-
 
 void zigZag(int matrice[][MAX], int nr_linii, int nr_coloane, int raspuns[], int *dim3){
     int indice = 0;
@@ -194,12 +191,10 @@ void zigZag(int matrice[][MAX], int nr_linii, int nr_coloane, int raspuns[], int
         if (suma % 2 == 0)
         {
             parcurgereDiagonalaInJos(matrice, raspuns, suma, nr_linii, nr_coloane, &indice);
-            // indice++;
         }
         else
         {
             parcurgereDiagonalaInSus(matrice, raspuns, suma, nr_linii, nr_coloane, &indice);
-            // indice++;
         }
     }
 
@@ -291,14 +286,8 @@ void spirala(int matrice[][MAX], int nr_linii, int nr_coloane, int raspuns[], in
         }
         
     }
-    if (nr_linii == nr_coloane)
-    {
-        *dim4 = indice - 1;
-    }
-    else
-    {
-        *dim4 = indice;
-    }
+
+    *dim4 = indice - 1;
 
     /*
     TEST 1:
@@ -343,6 +332,17 @@ char* afisare(char raspuns[]){
     return raspuns;
 }
 
+void intToCharConverter(int vector[], char array[], int dim){
+    int pos = 0;
+
+    for (int i = 0; i < dim; i++)
+    {
+        pos += sprintf(array + pos, "%d ", vector[i]);
+    }
+
+    array[pos + 1] = '\0';
+}
+
 int main(){
     int matrice[MAX][MAX];
     int nr_linii, nr_coloane;
@@ -363,13 +363,7 @@ int main(){
     elementePare(matrice, raspuns1, nr_linii, nr_coloane, &dim1);
     char *raspuns1Char = malloc((dim1 * 3) * sizeof(char));
 
-    int pos = 0;
-    for (int i = 0; i < dim1; i++)
-    {
-        pos += sprintf(raspuns1Char + pos, "%d ", raspuns1[i]);
-    }
-
-    raspuns1Char[pos + 1] = '\0';
+    intToCharConverter(raspuns1, raspuns1Char, dim1);
 
     printf("\nRaspuns Numere pare: %s", afisare(raspuns1Char));
     
@@ -381,13 +375,7 @@ int main(){
     elementeNumerePrime(matrice, raspuns2, nr_linii, nr_coloane, &dim2);
     char *raspuns2Char = malloc((dim2 * 3) * sizeof(char));
 
-    pos = 0;
-    for (int i = 0; i < dim2; i++)
-    {
-        pos += sprintf(raspuns2Char + pos, "%d ", raspuns2[i]);
-    }
-
-    raspuns2Char[pos] = '\0';
+    intToCharConverter(raspuns2, raspuns2Char, dim2);
 
     printf("\nRaspuns Numere prime: %s", afisare(raspuns2Char));
 
@@ -398,14 +386,8 @@ int main(){
     int dim3;
     zigZag(matrice, nr_linii, nr_coloane, raspuns3, &dim3);
     char *raspuns3Char = malloc((dim3 * 3) * sizeof(char));
-
-    pos = 0;
-    for (int i = 0; i < dim3; i++)
-    {
-        pos += sprintf(raspuns3Char + pos, "%d ", raspuns3[i]);
-    }
-
-    raspuns3Char[pos] = '\0';
+    
+    intToCharConverter(raspuns3, raspuns3Char, dim3);
 
     printf("\nRaspuns ZigZag: %s", afisare(raspuns3Char));
 
@@ -417,13 +399,7 @@ int main(){
     spirala(matrice, nr_linii, nr_coloane, raspuns4, &dim4);
     char *raspuns4Char = malloc((dim4 * 3) * sizeof(char));
 
-    pos = 0;
-    for (int i = 0; i < dim4; i++)
-    {
-        pos += sprintf(raspuns4Char + pos, "%d ", raspuns4[i]);
-    }
-
-    raspuns4Char[pos] = '\0';
+    intToCharConverter(raspuns4, raspuns4Char, dim4);
 
     printf("\nRaspuns Spirala: %s", afisare(raspuns4Char));
 

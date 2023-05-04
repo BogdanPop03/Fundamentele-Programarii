@@ -291,8 +291,14 @@ void spirala(int matrice[][MAX], int nr_linii, int nr_coloane, int raspuns[], in
         }
         
     }
-
-    *dim4 = indice - 1;
+    if (nr_linii == nr_coloane)
+    {
+        *dim4 = indice - 1;
+    }
+    else
+    {
+        *dim4 = indice;
+    }
 
     /*
     TEST 1:
@@ -333,6 +339,10 @@ void spirala(int matrice[][MAX], int nr_linii, int nr_coloane, int raspuns[], in
 }
 // Cerinta Spirala stop
 
+char* afisare(char raspuns[]){
+    return raspuns;
+}
+
 int main(){
     int matrice[MAX][MAX];
     int nr_linii, nr_coloane;
@@ -351,7 +361,7 @@ int main(){
     int *raspuns1 = (int *)calloc(nr_linii * nr_coloane, sizeof(int));
     int dim1;
     elementePare(matrice, raspuns1, nr_linii, nr_coloane, &dim1);
-    char *raspuns1Char = (char *)malloc((dim1 * 3) * sizeof(char));
+    char *raspuns1Char = malloc((dim1 * 3) * sizeof(char));
 
     int pos = 0;
     for (int i = 0; i < dim1; i++)
@@ -361,7 +371,7 @@ int main(){
 
     raspuns1Char[pos + 1] = '\0';
 
-    printf("\nRaspuns Numere pare: %s", raspuns1Char);
+    printf("\nRaspuns Numere pare: %s", afisare(raspuns1Char));
     
     free(raspuns1);
     free(raspuns1Char);
@@ -369,17 +379,17 @@ int main(){
     int *raspuns2 = (int *)calloc(nr_linii * nr_coloane, sizeof(int));
     int dim2;
     elementeNumerePrime(matrice, raspuns2, nr_linii, nr_coloane, &dim2);
-    char *raspuns2Char = (char *)malloc((dim2 * 3) * sizeof(char));
+    char *raspuns2Char = malloc((dim2 * 3) * sizeof(char));
 
     pos = 0;
-    for (int i = 0; i < dim1; i++)
+    for (int i = 0; i < dim2; i++)
     {
         pos += sprintf(raspuns2Char + pos, "%d ", raspuns2[i]);
     }
 
     raspuns2Char[pos] = '\0';
 
-    printf("\nRaspuns Numere prime: %s", raspuns2Char);
+    printf("\nRaspuns Numere prime: %s", afisare(raspuns2Char));
 
     free(raspuns2);
     free(raspuns2Char);
@@ -387,17 +397,17 @@ int main(){
     int *raspuns3 = (int *)calloc(nr_linii * nr_coloane, sizeof(int));
     int dim3;
     zigZag(matrice, nr_linii, nr_coloane, raspuns3, &dim3);
-    char *raspuns3Char = (char *)malloc((dim3 * 3) * sizeof(char));
+    char *raspuns3Char = malloc((dim3 * 3) * sizeof(char));
 
     pos = 0;
-    for (int i = 0; i < dim1; i++)
+    for (int i = 0; i < dim3; i++)
     {
         pos += sprintf(raspuns3Char + pos, "%d ", raspuns3[i]);
     }
 
     raspuns3Char[pos] = '\0';
 
-    printf("\nRaspuns ZigZag: %s", raspuns3Char);
+    printf("\nRaspuns ZigZag: %s", afisare(raspuns3Char));
 
     free(raspuns3);
     free(raspuns3Char);
@@ -405,17 +415,17 @@ int main(){
     int *raspuns4 = (int *)calloc(nr_linii * nr_coloane, sizeof(int));
     int dim4;
     spirala(matrice, nr_linii, nr_coloane, raspuns4, &dim4);
-    char *raspuns4Char = (char *)malloc((dim4 * 3) * sizeof(char));
+    char *raspuns4Char = malloc((dim4 * 3) * sizeof(char));
 
     pos = 0;
-    for (int i = 0; i < dim1; i++)
+    for (int i = 0; i < dim4; i++)
     {
         pos += sprintf(raspuns4Char + pos, "%d ", raspuns4[i]);
     }
 
     raspuns4Char[pos] = '\0';
 
-    printf("\nRaspuns Spirala: %s", raspuns4Char);
+    printf("\nRaspuns Spirala: %s", afisare(raspuns4Char));
 
     free(raspuns4);
     free(raspuns4Char);

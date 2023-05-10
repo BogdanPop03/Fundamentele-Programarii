@@ -248,7 +248,6 @@ void spirala(int matrice[][MAX], int nr_linii, int nr_coloane, int raspuns[], in
     {
         for (int i = l; i < nr_coloane; i++)
         {
-            // printf("%d ", matrice[k][i]);
             raspuns[indice] = matrice[k][i];
             indice++;
         }
@@ -257,7 +256,6 @@ void spirala(int matrice[][MAX], int nr_linii, int nr_coloane, int raspuns[], in
 
         for (int i = k; i < nr_linii; i++) 
         {
-            // printf("%d ", matrice[i][nr_coloane - 1]);
             raspuns[indice] = matrice[i][nr_coloane - 1];
             indice++;
         }
@@ -268,7 +266,6 @@ void spirala(int matrice[][MAX], int nr_linii, int nr_coloane, int raspuns[], in
         {
             for (int i = nr_coloane - 1; i >= 0; --i)
             {
-                // printf("%d ", matrice[nr_linii - 1][i]);
                 raspuns[indice] = matrice[nr_linii - 1][i];
                 indice++;
             }
@@ -278,7 +275,6 @@ void spirala(int matrice[][MAX], int nr_linii, int nr_coloane, int raspuns[], in
         {
             for (int i = nr_linii - 1; i >= k; i--)
             {
-                // printf("%d ", matrice[i][l]);
                 raspuns[indice] = matrice[i][l];
                 indice++;
             }

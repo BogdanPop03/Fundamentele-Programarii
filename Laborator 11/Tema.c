@@ -19,6 +19,31 @@ int isValidDate(int day, int month, int year) {
     return 1;
 }
 
+int calculateDaysPassed(int day, int month, int year) {
+    int daysInMonth[] = {31, 28 + isLeapYear(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    int daysPassed = 0;
+
+    for (int i = 1; i < month; i++) {
+        daysPassed += daysInMonth[i - 1];
+    }
+
+    daysPassed += day;
+    return daysPassed;
+}
+
+int calculateDaysBetween(int day1, int month1, int year1, int day2, int month2, int year2) {
+    int daysPassed1 = calculateDaysPassed(day1, month1, year1);
+    int daysPassed2 = calculateDaysPassed(day2, month2, year2);
+    int daysBetween = 0;
+
+    for (int i = year1; i < year2; i++) {
+        daysBetween += 365 + isLeapYear(i);
+    }
+
+    daysBetween += daysPassed2 - daysPassed1;
+    return daysBetween;
+}
+
 void calculateFinalDate(int day, int month, int year, int numDays) {
     int daysInMonth[] = {31, 28 + isLeapYear(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
@@ -48,20 +73,26 @@ void calculateFinalDate(int day, int month, int year, int numDays) {
 }
 
 int main() {
-    int day, month, year, numDays;
+    int day1, month1, year1, day2, month2, year2, days_to_pass;
 
-    printf("Enter the initial date (d.mm.yyyy): ");
-    scanf("%d.%d.%d", &day, &month, &year);
+    printf("Enter the first date (d.mm.yyyy): ");
+    scanf("%d.%d.%d", &day1, &month1, &year1);
 
     printf("Enter the number of days to pass: ");
-    scanf("%d", &numDays);
+    scanf("%d", &days_to_pass);
 
-    if (!isValidDate(day, month, year)) {
+    calculateFinalDate(day1, month1, year1, days_to_pass);
+
+    printf("Enter the second date (d.mm.yyyy): ");
+    scanf("%d.%d.%d", &day2, &month2, &year2);
+
+    if (!isValidDate(day1, month1, year1) || !isValidDate(day2, month2, year2)) {
         printf("Invalid date!\n");
         return 1;
     }
 
-    calculateFinalDate(day, month, year, numDays);
+    int daysBetween = calculateDaysBetween(day1, month1, year1, day2, month2, year2);
+    printf("The number of days between the two dates is: %d\n", daysBetween);
 
     return 0;
 }

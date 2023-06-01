@@ -28,7 +28,6 @@ void deleteAllDuplicates(char* text) {
     text[index] = '\0';
 }
 
-
 void deleteNeighbouringDuplicates(char* text) {
     int len = strlen(text);
     int index = 0;
